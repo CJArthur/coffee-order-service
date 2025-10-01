@@ -1,1 +1,4 @@
 .envrc
+.ruff_cache
+__pycache/
+.venv
