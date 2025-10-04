@@ -3,7 +3,7 @@ from aiogram import Router, F
 from aiogram.types import Message
 
 #--- Кнопки ---#
-from keyboards.history_message_ikb import make_order_review_ikb
+from bot.keyboards.history_message_kb import make_order_review_ikb
 
 # Роутер
 history_router = Router()
