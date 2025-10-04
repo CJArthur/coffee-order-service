@@ -8,6 +8,7 @@ from config import BOT_TOKEN
 #--- Ипортируем handlers ---#
 import handlers.start_handler as start_handler
 import handlers.make_order_handler as make_order_handler
+import handlers.settings_handler as settings_handler
 
 
 async def main():
@@ -17,6 +18,7 @@ async def main():
     # Объявляем роутеры
     dp.include_router(start_handler.start_router)
     dp.include_router(make_order_handler.make_order_router)
+    dp.include_router(settings_handler.settings_router)
     await dp.start_polling(bot)
 
 
