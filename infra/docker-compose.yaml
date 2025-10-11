@@ -26,6 +26,29 @@ services:
           path: ../src
           target: /app/src
 
+  bot:
+    build:
+      context: ..
+      target: development-image
+      dockerfile: ./infra/Dockerfile
+    container_name: mav_bot
+    environment:
+      CONFIG_FILE: "/etc/config.toml"
+      MAV_ENV: "docker"
+      PYTHONPATH: "/app"
+    command: >
+      /bin/uv run python src/bot/bot.py
+    configs:
+      - source: backend_config
+        target: /etc/config.toml
+    volumes:
+      - ../src:/app/src:ro
+    develop:
+      watch:
+        - action: rebuild
+          path: ../src
+          target: /app/src
+
   postgres:
     image: postgres:18-alpine3.22
     container_name: postgres
