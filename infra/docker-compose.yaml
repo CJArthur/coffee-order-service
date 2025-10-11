@@ -1,0 +1,48 @@
+services:
+  web:
+    build:
+      context: ..
+      target: development-image
+      dockerfile: ./infra/Dockerfile
+    container_name: mav_web
+    depends_on:
+     - postgres
+    environment:
+      CONFIG_FILE: "/etc/config.toml"
+      MAV_ENV: "docker"
+    command: >
+      /bin/uv run uvicorn src.api.main:app
+      --host 0.0.0.0 --port 80 --reload --reload-include *.py,*.toml
+    ports:
+      - "8000:80"
+    configs:
+      - source: backend_config
+        target: /etc/config.toml
+    volumes:
+      - ../src:/app/src:ro
+    develop:
+      watch:
+        - action: rebuild
+          path: ../src
+          target: /app/src
+
+  postgres:
+    image: postgres:18-alpine3.22
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+configs:
+  backend_config:
+    file: config.toml
+
+volumes:
+  postgres-data:
