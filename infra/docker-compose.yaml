@@ -6,7 +6,7 @@ services:
       dockerfile: ./infra/Dockerfile
     container_name: coffee_order_service_web
     depends_on:
-     - postgres
+     - postgres_coffee
     environment:
       CONFIG_FILE: "/etc/config.toml"
       COFFEE_ORDER_SERVICE_ENV: "docker"
@@ -49,17 +49,17 @@ services:
           path: ../src
           target: /app/src
 
-  postgres:
+  postgres_coffee:
     image: postgres:18-alpine3.22
     container_name: coffee_order_service_postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: coffee_order_service_postgres
     ports:
       - "5432:5432"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres-coffee-data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
 
@@ -68,4 +68,4 @@ configs:
     file: config.toml
 
 volumes:
-  postgres-data:
+  postgres-coffee-data:

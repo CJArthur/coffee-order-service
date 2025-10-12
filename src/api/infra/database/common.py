@@ -83,32 +83,6 @@ class PostgresGate:
     retort = retort
 
 
-@dataclass
-class GetPaginatedGate[TTable]:
-    session: AsyncSession
-    table: type[TTable]
-    pagination_service: OffsetPaginationService
-
-    async def __call__[TFilter, TOrder](
-        self,
-        pagination: PaginationSchema,
-        _filtering: TFilter | None = None,
-        _ordering: TOrder | None = None,
-    ) -> PagePaginatedSchema[TTable]:
-        modifiers = []
-
-        result = await self.session.execute(
-            self.pagination_service.paginate_query(
-                QueryComposer(select(self.table), modifiers).build(),
-                pagination,
-            )
-        )
-
-        return retort.load(
-            result.mappings().first(), PagePaginatedSchema[self.table]
-        )
-
-
 @dataclass(kw_only=True)
 class CreateGate[TTable, TCreate](PostgresGate, ReturningMixin[TTable]):
     table: type[TTable]

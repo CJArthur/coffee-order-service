@@ -17,7 +17,6 @@ from src.api.infra.database.common import (
     CreateGate,
     DeleteGate,
     GetOneGate,
-    GetPaginatedGate,
     UpdateGate,
 )
 from src.api.infra.database.core.version.gates import GetVersionsGate
@@ -55,7 +54,6 @@ class DatabaseProvider(Provider):
     )
 
     _get_base_gates = provide_all(
-        GetPaginatedGate,
         GetOneGate,
         CreateGate,
         UpdateGate,
