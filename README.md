@@ -1,4 +1,4 @@
-# MAV-tg-crm 🤖
+# Coffee order service 🤖
 
 #### Используемый стек:
 
@@ -9,6 +9,10 @@
 🐍 Dishka
 🐍 Adaptix
 🏷️ Postgres
+🏷️ Uv
+🏷️ Dockerfile/Docker compose
+🏷️ Alembic
+
 
 ---
 
@@ -65,10 +69,8 @@ make compose
 ```bash 
 make watch
 ```
-- Запуск проекта без билда
 
 ```bash 
-make untouch
 ```
 - Остановка сервисов
 

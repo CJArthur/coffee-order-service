@@ -4,12 +4,12 @@ services:
       context: ..
       target: development-image
       dockerfile: ./infra/Dockerfile
-    container_name: mav_web
+    container_name: coffee_order_service_web
     depends_on:
      - postgres
     environment:
       CONFIG_FILE: "/etc/config.toml"
-      MAV_ENV: "docker"
+      COFFEE_ORDER_SERVICE_ENV: "docker"
     command: >
       /bin/uv run uvicorn src.api.main:app
       --host 0.0.0.0 --port 80 --reload --reload-include *.py,*.toml
@@ -31,10 +31,10 @@ services:
       context: ..
       target: development-image
       dockerfile: ./infra/Dockerfile
-    container_name: mav_bot
+    container_name: coffee_order_service_bot
     environment:
       CONFIG_FILE: "/etc/config.toml"
-      MAV_ENV: "docker"
+      COFFEE_ORDER_SERVICE_ENV: "docker"
       PYTHONPATH: "/app"
     command: >
       /bin/uv run python src/bot/bot.py
@@ -51,7 +51,7 @@ services:
 
   postgres:
     image: postgres:18-alpine3.22
-    container_name: postgres
+    container_name: coffee_order_service_postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

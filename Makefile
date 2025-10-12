@@ -1,4 +1,4 @@
-REPOSITORY=github.com/sklyarvladislav/mav-tg-crm
+REPOSITORY=https://github.com/CJArthur/coffee-order-service
 
 
 TAG=${REPOSITORY}:${VESION}
