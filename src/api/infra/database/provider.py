@@ -51,8 +51,6 @@ class DatabaseProvider(Provider):
             yield session
 
     _get_services = provide_all(
-        OffsetPaginationService,
-        CursorPaginationService,
         scope=Scope.APP,
     )
 

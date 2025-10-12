@@ -48,7 +48,7 @@ def get_config() -> Config:
         environments=True,
         default_env="default",
         merge_enabled=True,
-        env_switcher="MAV_ENV",
+        env_switcher="COFFEE_ORDER_SERVICE_ENV",
     )
     retort = Retort()
 
