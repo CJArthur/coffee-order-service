@@ -186,6 +186,41 @@ wheels = [
 ]
 
 [[package]]
+name = "coffee-order-service"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "adaptix" },
+    { name = "aiogram" },
+    { name = "alembic" },
+    { name = "asyncpg" },
+    { name = "dishka" },
+    { name = "dynaconf" },
+    { name = "fastapi" },
+    { name = "pre-commit" },
+    { name = "psycopg2-binary" },
+    { name = "ruff" },
+    { name = "structlog" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "adaptix", specifier = ">=3.0.0b11" },
+    { name = "aiogram", specifier = ">=3.22.0" },
+    { name = "alembic", specifier = ">=1.16.5" },
+    { name = "asyncpg", specifier = ">=0.30.0" },
+    { name = "dishka", specifier = ">=1.7.1" },
+    { name = "dynaconf", specifier = ">=3.2.11" },
+    { name = "fastapi", specifier = ">=0.117.1" },
+    { name = "pre-commit", specifier = ">=4.3.0" },
+    { name = "psycopg2-binary", specifier = ">=2.9.10" },
+    { name = "ruff", specifier = ">=0.13.1" },
+    { name = "structlog", specifier = ">=25.4.0" },
+    { name = "uvicorn", specifier = ">=0.36.0" },
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -352,41 +387,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/2f/e1/78ee7a023dac597a5825441ebd17170785a9dab23de95d2c7508ade94e0e/markupsafe-3.0.3-cp312-cp312-win32.whl", hash = "sha256:d88b440e37a16e651bda4c7c2b930eb586fd15ca7406cb39e211fcff3bf3017d", size = 14540, upload-time = "2025-09-27T18:36:38.761Z" },
     { url = "https://files.pythonhosted.org/packages/aa/5b/bec5aa9bbbb2c946ca2733ef9c4ca91c91b6a24580193e891b5f7dbe8e1e/markupsafe-3.0.3-cp312-cp312-win_amd64.whl", hash = "sha256:26a5784ded40c9e318cfc2bdb30fe164bdb8665ded9cd64d500a34fb42067b1c", size = 15105, upload-time = "2025-09-27T18:36:39.701Z" },
     { url = "https://files.pythonhosted.org/packages/e5/f1/216fc1bbfd74011693a4fd837e7026152e89c4bcf3e77b6692fba9923123/markupsafe-3.0.3-cp312-cp312-win_arm64.whl", hash = "sha256:35add3b638a5d900e807944a078b51922212fb3dedb01633a8defc4b01a3c85f", size = 13906, upload-time = "2025-09-27T18:36:40.689Z" },
-]
-
-[[package]]
-name = "mav-tg-crm"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "adaptix" },
-    { name = "aiogram" },
-    { name = "alembic" },
-    { name = "asyncpg" },
-    { name = "dishka" },
-    { name = "dynaconf" },
-    { name = "fastapi" },
-    { name = "pre-commit" },
-    { name = "psycopg2-binary" },
-    { name = "ruff" },
-    { name = "structlog" },
-    { name = "uvicorn" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "adaptix", specifier = ">=3.0.0b11" },
-    { name = "aiogram", specifier = ">=3.22.0" },
-    { name = "alembic", specifier = ">=1.16.5" },
-    { name = "asyncpg", specifier = ">=0.30.0" },
-    { name = "dishka", specifier = ">=1.7.1" },
-    { name = "dynaconf", specifier = ">=3.2.11" },
-    { name = "fastapi", specifier = ">=0.117.1" },
-    { name = "pre-commit", specifier = ">=4.3.0" },
-    { name = "psycopg2-binary", specifier = ">=2.9.10" },
-    { name = "ruff", specifier = ">=0.13.1" },
-    { name = "structlog", specifier = ">=25.4.0" },
-    { name = "uvicorn", specifier = ">=0.36.0" },
 ]
 
 [[package]]

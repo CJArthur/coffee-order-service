@@ -1,5 +1,5 @@
 [project]
-name = "mav-tg-crm"
+name = "coffee-order-service"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"

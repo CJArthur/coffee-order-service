@@ -4,7 +4,7 @@ from sqlalchemy import Column, MetaData, Table
 from sqlalchemy.orm import registry
 from sqlalchemy.sql.expression import text
 
-SCHEMA = "mav_schema"
+SCHEMA = "coffee_order_service_schema"
 
 enabled_pg_schemas: list = [
     "__alembic_schema",
