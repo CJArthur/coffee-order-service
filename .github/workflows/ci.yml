@@ -21,8 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --upgrade pip
-          uv pip install .
+          python -m pip install --upgrade pip
+          pip install . ruff pytest
 
 
       - name: Run Ruff linter
