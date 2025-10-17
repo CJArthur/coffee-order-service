@@ -19,6 +19,6 @@ FROM base-image AS development-image
 WORKDIR $PROJECT_PATH
 
 COPY --chown=user:user ../src $PROJECT_PATH/src 
-COPY --chown=user:user ../alembic.ini $PROJECT_PATH/alembic.ini
+COPY --chown=user:user alembic.ini $PROJECT_PATH/alembic.ini
 
 CMD ["/bin/sh"]
