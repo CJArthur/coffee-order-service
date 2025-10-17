@@ -33,6 +33,6 @@ jobs:
         run: |
           pytest -v || true
 
-      - name: Test Docker build
+      - name: Test Docker build image
         run: |
-          docker build -t test-build ./infra
+          docker build -t test-build -f infra/Dockerfile .
