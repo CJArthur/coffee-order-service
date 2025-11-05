@@ -1,11 +1,11 @@
 from .base import enabled_pg_schemas, metadata
-from .products import Products
+from .product import Product
 from .settings import Settings
 from .user import User
 from .version import Version
 
 __all__ = [
-    "Products",
+    "Product",
     "Settings",
     "User",
     "Version",

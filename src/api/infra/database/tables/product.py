@@ -7,7 +7,7 @@ from src.api.infra.database.tables.base import registry
 
 
 @registry.mapped_as_dataclass(kw_only=True)
-class Products:
+class Product:
     __tablename__ = "products"
 
     product_id: uuid.UUID = mapped_column(
